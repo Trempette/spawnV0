@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutDescription="@xml/motion_coming_soon_fragment"
-        android:background="@color/defaultBgApp" >
+        android:background="@drawable/bg_search">
 
         <TextView
             android:id="@+id/title_fragment"

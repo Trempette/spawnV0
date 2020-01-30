@@ -31,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.bottomNavigation.inflateMenu(R.menu.menu)
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            viewModel.onNavigationItemSelected(it)
+        }
+
+        openComingSoon()
 
     }
 
