@@ -11,20 +11,18 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="180dp"
+        android:layout_height="258dp"
         app:cardUseCompatPadding="true"
         app:cardPreventCornerOverlap="false"
-        app:cardCornerRadius="10dp"
-        >
+        app:cardCornerRadius="10dp">
 
         <ImageView
             android:id="@+id/icon"
             cornerRadiusImageUrl="@{viewModel.url}"
-            android:layout_width="251dp"
-            android:layout_height="333dp"
-            android:layout_marginEnd="@dimen/fragment_title_margin"
-            android:layout_marginRight="@dimen/fragment_title_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_arrow"
             app:layout_constraintBottom_toBottomOf="@+id/title"
             app:layout_constraintEnd_toEndOf="parent"

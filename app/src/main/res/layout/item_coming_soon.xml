@@ -42,7 +42,7 @@
             tools:text="Les plus attendus" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/filters_list"
+            android:id="@+id/games_list"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
