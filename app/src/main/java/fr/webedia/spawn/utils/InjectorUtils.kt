@@ -1,7 +1,7 @@
 package fr.webedia.spawn.utils
 
 import android.content.Context
-import com.webedia.optimusprime.db.MyDatabase
+import fr.webedia.spawn.db.MyDatabase
 import fr.webedia.spawn.api.APIRetrofitInstance
 import fr.webedia.spawn.api.SpawnRepository
 

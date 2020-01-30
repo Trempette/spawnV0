@@ -1,9 +1,8 @@
 package fr.webedia.spawn.api
 
-import com.webedia.optimusprime.db.MyDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
+import fr.webedia.spawn.db.MyDatabase
+import fr.webedia.spawn.model.Game
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class SpawnRepository(private val apiService: APIService, private val database: MyDatabase) :
@@ -17,14 +16,23 @@ class SpawnRepository(private val apiService: APIService, private val database: 
         job.cancel()
     }
 
+    suspend fun insertListOfGameInDB(list: List<Game>) {
+        coroutineScope {
+            withContext(Dispatchers.IO) {
+                database.gamesDao().insert(list)
+            }
+        }
+    }
+
     companion object {
 
         @Volatile
         private var instance: SpawnRepository? = null
 
-        fun get(apiService: APIService, database: MyDatabase) = instance ?: synchronized(SpawnRepository::class) {
-            instance ?: SpawnRepository(apiService, database).also { instance = it }
-        }
+        fun get(apiService: APIService, database: MyDatabase) =
+            instance ?: synchronized(SpawnRepository::class) {
+                instance ?: SpawnRepository(apiService, database).also { instance = it }
+            }
 
     }
 }

@@ -1,9 +1,9 @@
 package fr.webedia.spawn.model
 
 import androidx.room.Entity
-import kotlinx.coroutines.flow.asFlow
+import androidx.room.TypeConverters
+import fr.webedia.spawn.db.Converters
 import java.util.*
-import kotlin.collections.ArrayList
 
 @Entity(
     tableName = "games",
@@ -13,13 +13,14 @@ data class Game(
     var id: String,
     var name: String,
     var imageUrl: String,
+    @TypeConverters(Converters::class)
     var releaseDate: Date,
     var genre: String,
     var editor: String
 ) {
 
     companion object {
-        fun getListOfGames() : ArrayList<Game> {
+        fun getListOfGames(): ArrayList<Game> {
             val list = arrayListOf<Game>()
             list.add(zeldaBreathOfTheWild)
             list.add(pokemon)

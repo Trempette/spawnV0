@@ -1,8 +1,10 @@
-package com.webedia.optimusprime.db
+package fr.webedia.spawn.db
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import fr.webedia.spawn.model.Game
+import fr.webedia.spawn.model.MyOwnGames
 
 interface IDao<T> {
 
@@ -23,12 +25,32 @@ interface IDao<T> {
 
 }
 
+@Dao
+interface GamesDAO : IDao<Game> {
+
+    @Query("SELECT * FROM games")
+    fun getAllGames(): LiveData<List<Game>>
+
+}
+
+@Dao
+interface MyOwnGamesDAO : IDao<MyOwnGames> {
+
+    @Query("SELECT * FROM myOwnGames")
+    fun getAllMyGames(): LiveData<List<MyOwnGames>>
+
+}
+
 @Database(
-    entities = [Game::class],
+    entities = [Game::class, MyOwnGames::class],
     version = 1,
     exportSchema = false
 )
+@TypeConverters(Converters::class)
 abstract class MyDatabase : RoomDatabase() {
+
+    abstract fun gamesDao(): GamesDAO
+    abstract fun myOwnGamesDao(): MyOwnGamesDAO
 
     companion object {
         @Volatile
