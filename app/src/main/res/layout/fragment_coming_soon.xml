@@ -10,13 +10,22 @@
 
     </data>
 
+
+
     <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/motion_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layoutDescription="@xml/motion_coming_soon_fragment"
-        android:background="@drawable/bg_coming_soon" >
+         >
+
+        <ImageView
+            android:id="@+id/img_coming_soon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="matrix"
+            android:src="@drawable/bg_coming_soon"/>
 
         <TextView
             android:id="@+id/title_fragment"
@@ -42,5 +51,4 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
-
 </layout>

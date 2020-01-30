@@ -15,8 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/bg_games"
         app:layoutDescription="@xml/motion_coming_soon_fragment">
+
+        <ImageView
+            android:id="@+id/img_coming_soon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="matrix"
+            android:src="@drawable/bg_games"/>
 
         <TextView
             android:id="@+id/title_fragment"
