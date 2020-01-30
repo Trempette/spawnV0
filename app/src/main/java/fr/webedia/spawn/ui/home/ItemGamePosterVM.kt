@@ -1,6 +1,7 @@
 package fr.webedia.spawn.ui.home
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.webedia.optimusprime.utils.livedata.SingleLiveEvent
 import fr.webedia.spawn.model.Game

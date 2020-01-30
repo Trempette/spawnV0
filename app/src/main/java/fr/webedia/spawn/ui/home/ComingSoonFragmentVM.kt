@@ -30,7 +30,7 @@ class ComingSoonFragmentVM(application: Application) : BaseViewModel(application
     }
 
     var mesSortie = list.map {
-        listOf<Game>()
+        Game.getMesSorties()
     }
 
     var listGameListItem =

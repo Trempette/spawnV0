@@ -40,11 +40,20 @@ data class Game(
             return list
         }
 
+        fun getMesSorties(): List<Game> {
+            val list = arrayListOf<Game>()
+            list.add(zeldaBreathOfTheWild)
+            list.add(pokemon)
+            list.add(fortnite)
+            list.add(superSmashBros)
+            return list.toList()
+        }
+
 
         private var zeldaBreathOfTheWild = Game(
             "1",
             "Zelda : Breath Of The Wild",
-            "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild#/media/File:The_Legend_of_Zelda_Breath_of_the_Wild.jpg",
+            "https://images-na.ssl-images-amazon.com/images/I/71%2BOdMAx25L._AC_SY679_.jpg",
             Date(1488538409000),
             "Action  RPG",
             "Nintendo"
@@ -144,7 +153,7 @@ data class Game(
             "12",
             "Mario Bros",
             "https://i.pinimg.com/originals/44/8e/bb/448ebb800d50467637796d7021e46943.jpg",
-            Date(462192809000),
+            Date(1580468009000),
             "Plate-Forme",
             "Nintendo"
         )
@@ -153,7 +162,7 @@ data class Game(
             "13",
             "Zelda : Ocarina Of Time",
             "https://images-na.ssl-images-amazon.com/images/I/717h-VyruuL._AC_SY741_.jpg",
-            Date(911645609000),
+            Date(1578999209000),
             "Action RPG",
             "Nintendo"
         )
@@ -171,7 +180,7 @@ data class Game(
             "15",
             "Pokemon : Version Rouge/Bleue",
             "https://images-na.ssl-images-amazon.com/images/I/61Mb3rnhUYL._AC_.jpg",
-            Date(939380009000),
+            Date(1580381609000),
             "RPG",
             "Nintendo"
         )

@@ -242,7 +242,7 @@
                     android:id="@+id/game_infos"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    tools:text="Infos du jeu"
+                    android:text="Infos du jeu"
                     android:textSize="26sp"
                     android:textColor="@color/colorPrimary"
                     android:layout_marginTop="@dimen/fragment_title_margin"
@@ -256,7 +256,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="CE JEU EST UN JEU DE QUALITE AH OUI OUI OUI"
+                    android:text="blablabla"
                     android:layout_marginTop="10dp"
                     android:textColor="@color/colorPrimary"
                     android:layout_marginStart="@dimen/fragment_title_margin"

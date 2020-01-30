@@ -1,6 +1,7 @@
 package fr.webedia.spawn.ui.home
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,7 +35,9 @@ class GamePosterAdapter (val context: Context, val lifecycleOwner: LifecycleOwne
     override fun onBindViewHolder(holder: GamePosterViewHolder, position: Int) {
         val vm = ItemGamePosterVM(getItem(position))
         vm.onClickEvent.observe(lifecycleOwner, Observer {
-            GameActivity.newIntent(context, it)
+            Log.d("TAGLOG", it)
+
+            context.startActivity(GameActivity.newIntent(context, it))
         })
         holder.bind(vm)
     }
