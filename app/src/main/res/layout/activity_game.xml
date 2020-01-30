@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical"
+            android:background="@color/defaultBgApp"
             android:scrollbarThumbVertical="@drawable/item_scrollbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,7 +47,7 @@
                     app:layout_constraintBottom_toBottomOf="@+id/image" />
 
                 <TextView
-                    android:id="@+id/title_fragment"
+                    android:id="@+id/title"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     tools:text="Cyberpunk 2077"
@@ -57,7 +58,210 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="700dp"/>
+                    android:layout_marginTop="350dp"/>
+
+                <ImageView
+                    android:id="@+id/poster"
+                    android:layout_width="110dp"
+                    android:layout_height="157dp"
+                    android:src="@drawable/background"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="@dimen/fragment_title_margin"
+                    app:layout_constraintTop_toBottomOf="@+id/title"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/release_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginLeft="@dimen/fragment_title_margin"
+                    android:text="Sortie:"
+                    android:textColor="@color/font"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/poster"
+                    app:layout_constraintTop_toTopOf="@+id/poster" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="16 avril 2020"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/release_title"
+                    app:layout_constraintTop_toTopOf="@+id/poster" />
+
+                <TextView
+                    android:id="@+id/editor_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginLeft="@dimen/fragment_title_margin"
+                    android:text="Editeur:"
+                    android:textColor="@color/font"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/poster"
+                    app:layout_constraintTop_toBottomOf="@+id/release_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="CD Projekt"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/editor_title"
+                    app:layout_constraintTop_toBottomOf="@+id/release_title" />
+
+                <TextView
+                    android:id="@+id/genre_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginLeft="@dimen/fragment_title_margin"
+                    android:text="Genre:"
+                    android:textColor="@color/font"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/poster"
+                    app:layout_constraintTop_toBottomOf="@+id/editor_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Action Aventure RPG"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/genre_title"
+                    app:layout_constraintTop_toBottomOf="@+id/editor_title" />
+
+                <TextView
+                    android:id="@+id/pegi_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginLeft="@dimen/fragment_title_margin"
+                    android:text="PEGI:"
+                    android:textColor="@color/font"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/poster"
+                    app:layout_constraintTop_toBottomOf="@+id/genre_title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="+18"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/genre_title"
+                    app:layout_constraintTop_toBottomOf="@+id/genre_title" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/for_soon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="C'est pour bientot"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/poster"
+                    style="@style/ClickedButtons" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/started"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="J'ai commencé"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/for_soon"
+                    style="@style/BasicButtons" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/finished"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Fini !"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/started"
+                    style="@style/BasicButtons" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/not_my_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Finalement, pas mon truc"
+                    android:clickable="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/finished"
+                    style="@style/BasicButtons" />
+
+                <TextView
+                    android:id="@+id/game_infos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:text="Infos du jeu"
+                    android:textSize="26sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginTop="@dimen/fragment_title_margin"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginLeft="@dimen/fragment_title_margin"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/icon"
+                    app:layout_constraintTop_toBottomOf="@+id/not_my_type" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="blablabla"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginStart="@dimen/fragment_title_margin"
+                    android:layout_marginEnd="@dimen/fragment_title_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/game_infos"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
