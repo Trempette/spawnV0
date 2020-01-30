@@ -9,6 +9,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import fr.webedia.spawn.BR
@@ -23,8 +24,6 @@ class ComingSoonAdapter(
     val application: Application
 ) : ListAdapter<GameListItem, ComingSoonAdapter.ComingSoonViewHolder>(GameItemComparator()) {
 
-    val TYPE_SECTION = 1
-
     init {
         games.observe(lifecycleOwner, Observer {
             submitList(it)
@@ -34,15 +33,18 @@ class ComingSoonAdapter(
     private val inflater = LayoutInflater.from(context)
 
     override fun getItemViewType(position: Int): Int {
-        return TYPE_SECTION
+        return position
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComingSoonViewHolder {
-        return ComingSoonViewHolder(
-            ItemComingSoonBinding.inflate(inflater, parent, false),
-            lifecycleOwner,
-            context
-        )
+        val binding = ItemComingSoonBinding.inflate(inflater, parent, false)
+        binding.gamesList.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            if (viewType == 0) adapter = GamePosterAdapter(context, lifecycleOwner, globalVM.listMostWaited)
+            if (viewType == 1) adapter = GamePosterAdapter(context, lifecycleOwner, globalVM.listSortieDuMois)
+            if (viewType == 2) adapter = GamePosterAdapter(context, lifecycleOwner, globalVM.mesSortie)
+        }
+        return ComingSoonViewHolder(binding, lifecycleOwner, context)
     }
 
     override fun onBindViewHolder(holder: ComingSoonViewHolder, position: Int) {
@@ -72,8 +74,6 @@ class ComingSoonAdapter(
                 lifecycleOwner = mLifecycleOwner
                 executePendingBindings()
             }
-
-
         }
 
     }
