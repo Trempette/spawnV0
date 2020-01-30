@@ -26,6 +26,7 @@ fun ImageView.loadRoundedImageUrl(url: String?) {
     }
 }
 
+
 @BindingAdapter("cornerRadiusImageUrl")
 fun ImageView.loadCornerRadiusImageUrl(url: String?){
     if(!url.isNullOrEmpty()){

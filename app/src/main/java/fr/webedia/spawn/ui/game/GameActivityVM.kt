@@ -12,15 +12,19 @@ import fr.webedia.spawn.ui.common.BaseViewModel
 import fr.webedia.spawn.utils.DateUtil
 import fr.webedia.spawn.utils.InjectorUtils
 
-class GameActivityVMFactory(val application: Application, id: String) : ViewModelProvider.Factory {
+class GameActivityVMFactory(val application: Application,val id: String) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return GameActivityVM(application, id) as T
     }
 }
 
-class GameActivityVM(application: Application, val id: String) : BaseViewModel(application) {
+class GameActivityVM(application: Application,  id: String) : BaseViewModel(application) {
 
     val game = InjectorUtils.provideRepository(application.applicationContext).getGameById(id)
+
+    val name = game.map {
+        it.name
+    }
 
     val releaseDate = game.map {
         DateUtil.getYearMonthandDay(it.releaseDate)

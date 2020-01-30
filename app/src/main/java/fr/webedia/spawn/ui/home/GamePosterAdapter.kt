@@ -34,7 +34,7 @@ class GamePosterAdapter (val context: Context, val lifecycleOwner: LifecycleOwne
     override fun onBindViewHolder(holder: GamePosterViewHolder, position: Int) {
         val vm = ItemGamePosterVM(getItem(position))
         vm.onClickEvent.observe(lifecycleOwner, Observer {
-            GameActivity.newIntent(context)
+            GameActivity.newIntent(context, it)
         })
         holder.bind(vm)
     }
