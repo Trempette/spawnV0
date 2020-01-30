@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fragment_title_size">46dp</dimen>
+    <dimen name="fragment_title_margin">20dp</dimen>
+
+</resources>

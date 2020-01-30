@@ -6,7 +6,7 @@ import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.webedia.optimusprime.utils.livedata.SingleLiveEvent
-import fr.webedia.spawn.ui.commons.BaseViewModel
+import fr.webedia.spawn.ui.common.BaseViewModel
 
 class MainActivityVMFactory(val application: Application) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

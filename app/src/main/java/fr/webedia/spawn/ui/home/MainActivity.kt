@@ -49,15 +49,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openComingSoon() {
-        //openFragment("coming_soon", ComingSoonFragment.instance())
+        openFragment("coming_soon", ComingSoonFragment.instance())
     }
 
     private fun openGames() {
-        //openFragment("games", GamesFragment.instance())
+        openFragment("games", GamesFragment.instance())
     }
 
     private fun openSearch() {
-        //openFragment("search", SearchFragment.instance())
+        openFragment("search", SearchFragment.instance())
     }
 
     private fun openFragment(type: String, fragment: Fragment) {

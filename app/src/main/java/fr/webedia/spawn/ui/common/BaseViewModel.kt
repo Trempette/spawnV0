@@ -1,4 +1,4 @@
-package fr.webedia.spawn.ui.commons
+package fr.webedia.spawn.ui.common
 
 import android.app.Application
 import android.content.Context
