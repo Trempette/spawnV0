@@ -1,0 +1,46 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="fr.webedia.spawn.ui.home.GamesFragmentVM"/>
+
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motion_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutDescription="@xml/motion_coming_soon_fragment"
+        android:background="@color/defaultBgApp" >
+
+        <TextView
+            android:id="@+id/title_fragment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/action_games"
+            android:fontFamily="@font/edo"
+            android:layout_margin="@dimen/fragment_title_margin"
+            android:textSize="@dimen/fragment_title_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/showtimes_recycler"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="vertical"
+            android:scrollbarThumbVertical="@drawable/item_scrollbar"
+            app:layout_constraintTop_toBottomOf="@+id/title_fragment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+</layout>

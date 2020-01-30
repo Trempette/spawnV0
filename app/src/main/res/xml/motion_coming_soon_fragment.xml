@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Transition
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@id/end">
+
+        <OnSwipe
+            app:touchAnchorId="@+id/showtimes_recycler"
+            app:touchAnchorSide="top"
+            app:dragDirection="dragUp" />
+
+        <!--<KeyFrameSet>
+            <KeyAttribute
+                android:visibility="invisible"
+                app:framePosition="20"
+                app:motionTarget="@id/short_synopsis" />
+        </KeyFrameSet>-->
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+    </ConstraintSet>
+
+</MotionScene>
