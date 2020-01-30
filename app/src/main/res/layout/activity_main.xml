@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.webedia.spawn.ui.home.MainActivityVM" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/defaultBgApp"
+            android:layout_marginBottom="?android:attr/actionBarSize"/>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_gravity="bottom"
+            android:background="@color/defaultBgApp"
+            app:itemIconTint="@drawable/bottom_navigation_colors"
+            app:itemTextColor="@drawable/bottom_navigation_colors"
+            app:hideOnScroll="true"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

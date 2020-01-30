@@ -8,7 +8,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "fr.webedia.spawn"
-        minSdkVersion 15
+        minSdkVersion 16
+        multiDexEnabled true
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -19,6 +20,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -50,5 +59,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    //Webedia core
+    implementation('com.webedia.core:core:0.10.17-optimus-001') {
+        exclude group: 'com.google.android.gms', module: 'play-services-ads'
+    }
 
 }
