@@ -26,6 +26,14 @@ fun ImageView.loadRoundedImageUrl(url: String?) {
     }
 }
 
+@BindingAdapter("cornerRadiusImageUrl")
+fun ImageView.loadCornerRadiusImageUrl(url: String?){
+    if(!url.isNullOrEmpty()){
+        Glide.with(this).load(url).placeholder(R.drawable.background).error(R.drawable.background).apply(
+            RequestOptions.fitCenterTransform()).into(this)
+    }
+}
+
 @BindingMethods(
 
     BindingMethod(

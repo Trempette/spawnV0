@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.webedia.spawn.ui.home.ItemGamePosterVM" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="false"
+        app:cardCornerRadius="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            cornerRadiusImageUrl="@{viewModel.url}"
+            android:layout_width="251dp"
+            android:layout_height="333dp"
+            android:layout_marginEnd="@dimen/fragment_title_margin"
+            android:layout_marginRight="@dimen/fragment_title_margin"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/title"
+            tools:src="@drawable/background" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -73,6 +73,7 @@ class ComingSoonAdapter(
                 executePendingBindings()
             }
 
+            dataBinding!!.viewModel!!.listGames
 
         }
 
