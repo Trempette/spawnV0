@@ -19,7 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        
+        maven { url 'http://jenkins-mobile.toolswebedia.com:8081/nexus/content/groups/public/' }
     }
 }
 

@@ -2,4 +2,5 @@
 <resources>
     <color name="colorPrimary">#fff</color>
     <color name="colorAccent">#ffea00</color>
+    <color name="defaultBgApp">#000</color>
 </resources>
