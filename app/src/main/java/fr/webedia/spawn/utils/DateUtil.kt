@@ -30,7 +30,7 @@ class DateUtil {
         }
 
         fun getWordedYearMonthAndDay(date: Date): String {
-            var format = SimpleDateFormat("EEEE dd MMMM yyyy", Locale.FRANCE)
+            var format = SimpleDateFormat("dd MMMM yyyy", Locale.FRANCE)
             return format.format(date)
         }
 

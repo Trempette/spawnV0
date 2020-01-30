@@ -17,6 +17,8 @@ class ItemGamePosterVM(val game: Game) : ViewModel() {
 
     var url = game.imageUrl
 
+    var date = DateUtil.getWordedYearMonthAndDay(game.releaseDate)
+
     val onClickEvent = SingleLiveEvent<String>()
 
     fun displayGameDetails() {
