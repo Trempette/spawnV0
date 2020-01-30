@@ -29,6 +29,10 @@ class SpawnRepository(private val apiService: APIService, private val database: 
         return database.gamesDao().getAllGames()
     }
 
+    fun getGameById(id: String): LiveData<Game> {
+        return database.gamesDao().getGameById(id)
+    }
+
     companion object {
 
         @Volatile

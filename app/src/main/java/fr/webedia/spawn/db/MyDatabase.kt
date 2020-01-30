@@ -31,6 +31,9 @@ interface GamesDAO : IDao<Game> {
     @Query("SELECT * FROM games")
     fun getAllGames(): LiveData<List<Game>>
 
+    @Query("SELECT * FROM games WHERE id = :id")
+    fun getGameById(id: String): LiveData<Game>
+
 }
 
 @Dao

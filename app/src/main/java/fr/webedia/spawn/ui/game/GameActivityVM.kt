@@ -5,21 +5,20 @@ import android.view.MenuItem
 import androidx.annotation.NonNull
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.facebook.ads.internal.id
 import com.webedia.optimusprime.utils.livedata.SingleLiveEvent
 import fr.webedia.spawn.ui.common.BaseViewModel
+import fr.webedia.spawn.utils.InjectorUtils
 
-class GameActivityVMFactory(val application: Application) : ViewModelProvider.Factory {
+class GameActivityVMFactory(val application: Application, id: String) : ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return GameActivityVM(application) as T
+        return GameActivityVM(application, id) as T
     }
 }
 
-class GameActivityVM(application: Application) : BaseViewModel(application) {
+class GameActivityVM(application: Application, id: String) : BaseViewModel(application) {
 
-    val onNavigationClick = SingleLiveEvent<Int>()
+    val game = InjectorUtils.provideRepository(application.applicationContext).getGameById(id)
 
-    fun onNavigationItemSelected(@NonNull item: MenuItem): Boolean {
-        onNavigationClick.value = item.itemId
-        return true
-    }
+
 }
