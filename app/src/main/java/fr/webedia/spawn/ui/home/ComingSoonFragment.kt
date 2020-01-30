@@ -28,7 +28,7 @@ class ComingSoonFragment : Fragment() {
 
         binding.showtimesRecycler.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = ComingSoonAdapter(viewModel.games, viewModel, requireContext(), this@ComingSoonFragment)
+            adapter = ComingSoonAdapter(viewModel.listGameListItem, viewModel, requireContext(), this@ComingSoonFragment, requireActivity().application)
         }
     }
 

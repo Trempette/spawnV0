@@ -1,5 +1,6 @@
 package fr.webedia.spawn.api
 
+import androidx.lifecycle.LiveData
 import fr.webedia.spawn.db.MyDatabase
 import fr.webedia.spawn.model.Game
 import kotlinx.coroutines.*
@@ -22,6 +23,10 @@ class SpawnRepository(private val apiService: APIService, private val database: 
                 database.gamesDao().insert(list)
             }
         }
+    }
+
+    fun getAllGames(): LiveData<List<Game>> {
+        return database.gamesDao().getAllGames()
     }
 
     companion object {
